@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6d073d" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="A sincere apology and a little garden of memories, made for Usha."
+    />
+    <title>For Usha, My Bangaram</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="intro-active">
+    <div class="noise" aria-hidden="true"></div>
+    <div id="heartTrail" class="heart-trail" aria-hidden="true"></div>
+
+    <section id="countdownScreen" class="intro-screen countdown-screen" aria-live="polite">
+      <div class="countdown-halo" aria-hidden="true"></div>
+      <p class="intro-kicker">A little something from my heart</p>
+      <div id="countdownNumber" class="countdown-number">3</div>
+      <p id="countdownName" class="countdown-name">For Usha</p>
+    </section>
+
+    <section id="bowScreen" class="intro-screen bow-screen" hidden>
+      <button id="skipIntro" class="skip-intro" type="button">Skip intro</button>
+      <div class="bow-card">
+        <p class="intro-kicker">One small pull to open my heart</p>
+        <h1>For my Bangaram</h1>
+        <p id="bowHint" class="bow-hint">Pull the arrow back and release it</p>
+
+        <div class="bow-stage">
+          <svg
+            id="bowSvg"
+            class="bow-svg"
+            viewBox="0 0 390 220"
+            role="img"
+            aria-labelledby="bowTitle bowDescription"
+          >
+            <title id="bowTitle">Cupid's bow</title>
+            <desc id="bowDescription">Drag the arrow left and release it toward the heart.</desc>
+            <defs>
+              <linearGradient id="bowGold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffe9a8" />
+                <stop offset="0.48" stop-color="#f0b94e" />
+                <stop offset="1" stop-color="#9e531f" />
+              </linearGradient>
+              <linearGradient id="heartPink" x1="0" y1="0" x2="0.9" y2="1">
+                <stop offset="0" stop-color="#ffb8d8" />
+                <stop offset="0.5" stop-color="#ff3f93" />
+                <stop offset="1" stop-color="#bc145d" />
+              </linearGradient>
+              <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <circle class="stage-spark spark-one" cx="245" cy="39" r="2" />
+            <circle class="stage-spark spark-two" cx="285" cy="174" r="1.5" />
+            <circle class="stage-spark spark-three" cx="339" cy="37" r="1.8" />
+
+            <path
+              class="bow-wood"
+              d="M92 28 C28 67 28 153 92 192"
+              fill="none"
+              stroke="url(#bowGold)"
+              stroke-width="9"
+              stroke-linecap="round"
+            />
+            <path
+              d="M89 34 C43 70 43 150 89 186"
+              fill="none"
+              stroke="#fff0bd"
+              stroke-opacity=".42"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <polyline
+              id="bowString"
+              points="92,28 92,110 92,192"
+              fill="none"
+              stroke="#fff4e9"
+              stroke-width="2"
+            />
+
+            <g
+              id="arrowControl"
+              class="arrow-control"
+              role="button"
+              tabindex="0"
+              aria-label="Pull and release Cupid's arrow"
+            >
+              <line x1="73" y1="110" x2="224" y2="110" stroke="#ffe7a2" stroke-width="5" stroke-linecap="round" />
+              <path d="M224 110 L207 99 L211 110 L207 121 Z" fill="#ffedf5" />
+              <path d="M73 110 L54 98 L60 110 L54 122 Z" fill="#f6a5c8" />
+              <path d="M70 110 L58 91 L80 104 Z" fill="#e55091" />
+              <path d="M70 110 L58 129 L80 116 Z" fill="#e55091" />
+              <circle cx="89" cy="110" r="17" fill="transparent" />
+            </g>
+
+            <g id="targetHeart" class="target-heart" filter="url(#glow)" transform="translate(304 81)">
+              <path
+                d="M27 52 C21 45 1 33 1 17 C1 2 20 -5 28 9 C36 -5 55 2 55 17 C55 33 35 45 27 52 Z"
+                fill="url(#heartPink)"
+              />
+            </g>
+          </svg>
+        </div>
+
+        <p class="gesture-note">On phone: touch the arrow and drag left</p>
+      </div>
+    </section>
+
+    <section id="roseReveal" class="intro-screen rose-reveal" hidden aria-live="polite">
+      <div class="rose-glow" aria-hidden="true"></div>
+      <div class="blooming-rose" aria-hidden="true">🌹</div>
+      <p>A little garden is blooming for you…</p>
+    </section>
+
+    <main id="mainContent" hidden>
+      <header class="hero" id="top">
+        <div class="hero-shade" aria-hidden="true"></div>
+        <button id="musicButton" class="music-button" type="button" aria-pressed="false">
+          <span class="music-icon" aria-hidden="true">♫</span>
+          <span id="musicLabel">Play Cinnamon Girl</span>
+        </button>
+
+        <div class="hero-content reveal-on-scroll">
+          <p class="eyebrow">A sincere little apology</p>
+          <h1>Usha <span>ma</span></h1>
+          <p class="script-title">My Bangaram</p>
+          <p class="hero-copy">
+            I made this because you deserved more than a hurried “sorry.”
+            You deserved honesty, thought, and a message from my whole heart.
+          </p>
+          <a class="primary-link" href="#letter">Open my letter <span aria-hidden="true">↓</span></a>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">
+          <span></span>
+          <small>scroll gently</small>
+        </div>
+      </header>
+
+      <section class="section gallery-section" id="gallery">
+        <div class="section-heading reveal-on-scroll">
+          <span>01</span>
+          <p>Every shade of you</p>
+          <h2>Six frames I hold close</h2>
+        </div>
+
+        <div class="photo-grid">
+          <button class="photo-card tall reveal-on-scroll" type="button" data-full="assets/photos/usha-green.jpg" aria-label="Open Usha's green dress photo">
+            <img src="assets/photos/usha-green.jpg" alt="Usha smiling in a green dress" />
+            <span>Your smile makes ordinary moments softer.</span>
+          </button>
+          <button class="photo-card reveal-on-scroll" type="button" data-full="assets/photos/usha-black-shirt.jpg" aria-label="Open Usha's black shirt photo">
+            <img src="assets/photos/usha-black-shirt.jpg" alt="Usha smiling in a black shirt" loading="lazy" />
+            <span>The confidence I always admire.</span>
+          </button>
+          <button class="photo-card reveal-on-scroll" type="button" data-full="assets/photos/usha-white-flowers.jpg" aria-label="Open Usha's flower photo">
+            <img src="assets/photos/usha-white-flowers.jpg" alt="Usha holding delicate flowers" loading="lazy" />
+            <span>A gentle heart, beautifully you.</span>
+          </button>
+          <button class="photo-card wide reveal-on-scroll" type="button" data-full="assets/photos/usha-pink.jpg" aria-label="Open Usha's pink outfit photos">
+            <img src="assets/photos/usha-pink.jpg" alt="Four portraits of Usha in a pink jacket" loading="lazy" />
+            <span>Every little expression, every little memory.</span>
+          </button>
+          <button class="photo-card tall reveal-on-scroll" type="button" data-full="assets/photos/usha-black-saree.jpg" aria-label="Open Usha's black saree photo">
+            <img src="assets/photos/usha-black-saree.jpg" alt="Usha in a black saree in warm evening light" loading="lazy" />
+            <span>Grace that never needs an introduction.</span>
+          </button>
+          <button class="photo-card together reveal-on-scroll" type="button" data-full="assets/photos/us-together.jpg" aria-label="Open our photo together">
+            <img src="assets/photos/us-together.jpg" alt="Prem and Usha together" loading="lazy" />
+            <span>My favourite frame: us.</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section letter-section" id="letter">
+        <div class="letter-bloom" aria-hidden="true">✦</div>
+        <div class="section-heading centered reveal-on-scroll">
+          <span>02</span>
+          <p>No excuses. Only honesty.</p>
+          <h2>What I should have said</h2>
+        </div>
+
+        <article class="letter reveal-on-scroll">
+          <div class="letter-seal" aria-hidden="true">U</div>
+          <p class="letter-greeting">Usha ma,</p>
+          <p>
+            I am genuinely sorry that I didn’t ask you to come with me to the temple.
+            I understand now that it wasn’t only about going somewhere—it was about
+            feeling remembered, included, and wanted beside me. I should have thought
+            of you and asked you. I didn’t, and I understand why that hurt you.
+          </p>
+          <p>
+            You are my Bangaram. When I pray, I want my actions outside the temple to
+            carry the same care and respect. This time, my action did not show that.
+            I won’t hide behind an excuse. I was wrong, and I am truly sorry.
+          </p>
+          <p>
+            I cannot undo that moment, but I can learn from it. From now on, I will
+            communicate better and make sure you never have to wonder whether your
+            presence matters to me. It does—more than I sometimes know how to express.
+          </p>
+          <p>
+            I made this little place not to pressure you to forgive me, but to tell you
+            clearly and honestly that I understand my mistake and want to do better.
+            Take all the time you need. My temple visit would have felt more complete
+            with you beside me.
+          </p>
+          <p class="letter-apology">I’m really sorry, Usha ma.</p>
+          <div class="signature">
+            <span>With all my love,</span>
+            <strong>Prem</strong>
+            <small>your Lynx</small>
+          </div>
+        </article>
+      </section>
+
+      <section class="section memories-section" id="memories">
+        <div class="section-heading reveal-on-scroll">
+          <span>03</span>
+          <p>Words I never want to take for granted</p>
+          <h2>Our Memories</h2>
+        </div>
+
+        <div class="memory-grid">
+          <figure class="memory-card reveal-on-scroll">
+            <button type="button" data-full="assets/memories/memory-1.jpg" aria-label="Open our first chat memory">
+              <img src="assets/memories/memory-1.jpg" alt="A treasured conversation between Usha and Prem" loading="lazy" />
+            </button>
+            <figcaption>The words that made me feel close to you.</figcaption>
+          </figure>
+          <figure class="memory-card featured reveal-on-scroll">
+            <button type="button" data-full="assets/memories/memory-2.jpg" aria-label="Open our second chat memory">
+              <img src="assets/memories/memory-2.jpg" alt="A caring conversation shared by Usha and Prem" loading="lazy" />
+            </button>
+            <figcaption>The way you trusted me with your feelings.</figcaption>
+          </figure>
+          <figure class="memory-card reveal-on-scroll">
+            <button type="button" data-full="assets/memories/memory-3.jpg" aria-label="Open our third chat memory">
+              <img src="assets/memories/memory-3.jpg" alt="A meaningful conversation between Usha and Prem" loading="lazy" />
+            </button>
+            <figcaption>Small conversations. Precious memories.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="final-section">
+        <div class="final-content reveal-on-scroll">
+          <div class="final-rose" aria-hidden="true">🌹</div>
+          <p class="eyebrow">One last truth</p>
+          <h2>You matter to me,<br />Usha ma.</h2>
+          <p>
+            This page asks nothing from you. It only carries the apology I should have
+            given with more care.
+          </p>
+          <p class="final-sorry">I am truly sorry.</p>
+          <button id="replayButton" class="replay-button" type="button">Replay from the beginning</button>
+        </div>
+      </section>
+
+      <footer>
+        <p>Made with a sincere heart for <strong>Usha</strong></p>
+        <span>Prem · Lynx</span>
+      </footer>
+    </main>
+
+    <audio id="loveSong" preload="auto">
+      <source src="assets/audio/cinnamon-girl.mp3" type="audio/mpeg" />
+    </audio>
+    <p id="musicStatus" class="visually-hidden" aria-live="polite"></p>
+
+    <dialog id="lightbox" class="lightbox">
+      <button id="closeLightbox" type="button" aria-label="Close photo">×</button>
+      <img id="lightboxImage" src="" alt="Expanded memory" />
+    </dialog>
+
+    <noscript>
+      <div class="noscript-message">
+        Please enable JavaScript to open this little experience made for Usha.
+      </div>
+    </noscript>
+
+    <script src="script.js"></script>
+  </body>
+</html>
